@@ -1,4 +1,6 @@
-//practical4b
+--------------------------
+     //practical4b
+---------------------------
 //app.jsx:-
 import Header from "./components/Header";
 import HotelCard from "./components/HotelCard";
@@ -65,7 +67,9 @@ function HotelCard(props) {
     );
   }
   export default HotelCard;
+---------------
 //practical4c
+---------------
 //App.jsx:-
 import { useState} from "react";
 function App(){
@@ -81,8 +85,9 @@ function App(){
   );
 }
 export default App;
-
+----------------------
 //practical4d
+-----------------------
 //App.jsx:-
 import "./App.css";
 import StudentForm from "./Components/StudentForm";
@@ -147,7 +152,33 @@ function StudentForm() {
 }
 export default StudentForm;
 
+--------------------
+//practical4e
+---------------------
+//App,jsx:-
+import { useState } from "react";
+function ItemList() {
+  const [items] = useState([
+    "Oracle",
+    "JP Morgan",
+    "Google",
+    "Microsoft",
+  ]);
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Placement Companies</h2>
+      <ul style={{ display: "inline-block", textAlign: "left" }}>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+export default ItemList;
+------------------------
 //practical4f
+--------------------------
   // State Variable
   const [count, setCount] = useState(0);
   // Function to decrease count
@@ -178,5 +209,82 @@ export default StudentForm;
   );
 }
 export default App;
+---------------------
+//TO-Do List
+----------------------
+To - Do List 
+App.jsx
+import { useState } from "react"; 
+import "./App.css"; 
+function App() { 
+  const [task, setTask] = useState(""); 
+  const [tasks, setTasks] = useState([]); 
+  const addTask = () => { 
+    if (task === "") { 
+      return; } 
+      setTasks([...tasks, task]); 
+      setTask(""); 
+    }; 
+    return (
+    <div className="container">       
+    <h1>To-Do List</h1>       
+    <hr />       
+    <input 
+    type="text" 
+    placeholder="Enter Task" 
+    value={task} 
+    onChange={(e) => setTask(e.target.value)} 
+    />       
+    <button onClick={addTask}>Add Task</button>       
+    <hr />       
+    <h2>My Tasks</h2>       
+    <ul>         
+      {tasks.map((item, index) => (
+        <li key={index}>{item}
+        </li>))}       
+        </ul>     
+        </div>); 
+        } 
+export default App;
+App.css
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+.container {
+  width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+input {
+  width: 350px;
+  padding: 10px;
+  font-size: 18px;
+}
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: darkgreen;
+}
+ul {
+  text-align: left;
+  width: 400px;
+  margin: auto;
+}
+li {
+  font-size: 22px;
+  margin: 10px 0;
+}
 
 
